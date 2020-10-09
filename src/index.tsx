@@ -2,11 +2,24 @@ import ReactDOM from 'react-dom';
 
 import React, { Component } from 'react';
 
-class App extends Component {
+interface AppProps {
+  color?: string;
+}
+
+class App extends Component<AppProps> {
+  state = { counter: 0 };
+  onIncrement = (): void => {
+    this.setState({ counter: this.state.counter + 1 });
+  };
+  onDecrement = (): void => {
+    this.setState({ counter: this.state.counter - 1 });
+  };
   render() {
     return (
       <div>
-        <h1>Hi there</h1>
+        <h1>Hi there {this.state.counter}</h1>
+        <button onClick={this.onIncrement}>Increment</button>
+        <button onClick={this.onDecrement}>Decrement</button>
       </div>
     );
   }
