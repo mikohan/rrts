@@ -1,4 +1,3 @@
-import { FileTextChanges } from 'typescript';
 import { Todo, FetchTodosAction } from '../actions';
 import { ActionTypes } from '../actions/types';
 
